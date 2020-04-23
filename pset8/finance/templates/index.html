@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+Greetings, {{ name }}!<br><br>
+Available money: {{ money }}<br><br>
+Your portfolio:  <br><br>
+
+<table border = "1" align="center">
+
+    <tr>
+        <td>Stock</td>
+        <td>Shares quantity</td>
+        <td>Price of a share</td>
+        <td>Market value of all shares of this stock</td>
+
+    </tr>
+
+{% for stock in stock_portfolio %}
+<TR>
+
+   <td class="c1">{{ stock['name_stock'] }}</td>
+   <td>{{ stock['shares_quantity'] }}</td>
+   <td>${{ stock['current_price'] }}</td>
+   <td>${{ stock['market_value'] }}</td>
+
+</TR>
+{% endfor %}
+</table>
+<br>
+Total value of your all assets: {{ total_value }}
+
+{% endblock %}

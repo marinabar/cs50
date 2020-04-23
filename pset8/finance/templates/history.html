@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table border = "1" align="center">
+
+    <tr>
+        <td>Stock</td>
+        <td>Units</td>
+        <td>Price</td>
+        <td>Time</td>
+        <td>Type</td>
+
+    </tr>
+
+{% for transaction in transactions %}
+<TR>
+
+   <td class="c1">{{ transaction['stock'] }}</td>
+   <td>{{ transaction['units'] }}</td>
+   <td>${{ transaction['price'] }}</td>
+   <td>{{ transaction['time'] }}</td>
+   <td>{{ transaction['type'] }}</td>
+
+</TR>
+{% endfor %}
+</table>
+
+
+{% endblock %}
